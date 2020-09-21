@@ -628,8 +628,8 @@
                         <driver></driver>
                         <url>jdbc:sqlserver://localhost:1433;database=Elsa</url>
                         <defaultSchemaName></defaultSchemaName>
-                        <username>SA</username>
-                        <password>yourStrong(!)Password</password>
+                        <username>Elsa.admin</username>
+                        <password>Elsa@Lhdc</password>
                         <referenceUrl>hibernate:spring:com.ldchotels.domain?dialect=org.hibernate.dialect.SQLServer2012Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>

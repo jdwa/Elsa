@@ -34,8 +34,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:sqlserver://localhost:1433;database=Elsa
-    username: SA
-    password: yourStrong(!)Password
+    username: Elsa.admin
+    password: Elsa@Lhdc
     hikari:
       poolName: Hikari
       auto-commit: false
