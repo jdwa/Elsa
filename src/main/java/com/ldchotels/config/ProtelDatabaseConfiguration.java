@@ -20,43 +20,18 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableJpaRepositories("com.ldchotels.repository")
+@EnableJpaRepositories(
+    entityManagerFactoryRef = "protelEntityManagerFactory",
+    transactionManagerRef = "protelTransactionManager",
+    basePackages = "com.ldchotels.protel.repository"
+)
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
-public class DatabaseConfiguration {
-    private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
+public class ProtelDatabaseConfiguration {
+    private final Logger log = LoggerFactory.getLogger(ProtelDatabaseConfiguration.class);
 
     @Autowired
     private Environment env;
-
-    @Bean
-    @Primary
-    @ConfigurationProperties("spring.datasource")
-    public DataSourceProperties defaultDataSourceProperties() {
-        return new DataSourceProperties();
-    }
-
-    @Bean
-    @Primary
-    @ConfigurationProperties("spring.datasource")
-    public DataSource defaultDataSource() {
-        log.info("Default DataSource : " + env.getProperty("spring.datasource.url"));
-        return defaultDataSourceProperties().initializeDataSourceBuilder().build();
-    }
-
-    @Bean(name = "entityManagerFactory")
-    @Primary
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(defaultDataSource()).packages("com.ldchotels.domain").persistenceUnit("default").build();
-    }
-
-    @Bean(name = "transactionManager")
-    @Primary
-    public JpaTransactionManager defaultTransactionManager(
-        @Qualifier("entityManagerFactory") final LocalContainerEntityManagerFactoryBean entityManagerFactory
-    ) {
-        return new JpaTransactionManager(entityManagerFactory.getObject());
-    }
 
     @Bean
     @ConfigurationProperties("protel.datasource")
@@ -73,7 +48,7 @@ public class DatabaseConfiguration {
 
     @Bean(name = "protelEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean protelEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(protelDataSource()).packages("com.ldchotels.domain.protel").persistenceUnit("protel").build();
+        return builder.dataSource(protelDataSource()).packages("com.ldchotels.protel.domain").persistenceUnit("protel").build();
     }
 
     @Bean(name = "protelTransactionManager")

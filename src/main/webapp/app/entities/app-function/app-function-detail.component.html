@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="appFunction">
+            <h2><span jhiTranslate="elsaApp.appFunction.detail.title">App Function</span> {{ appFunction.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="elsaApp.appFunction.name">Name</span></dt>
+                <dd>
+                    <span>{{ appFunction.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="elsaApp.appFunction.description">Description</span></dt>
+                <dd>
+                    <span>{{ appFunction.description }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/app-function', appFunction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

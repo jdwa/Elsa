@@ -1,0 +1,23 @@
+{
+  "elsaApp": {
+    "appFunction": {
+      "home": {
+        "title": "App Functions",
+        "createLabel": "Create a new App Function",
+        "createOrEditLabel": "Create or edit a App Function",
+        "notFound": "No App Functions found"
+      },
+      "created": "A new App Function is created with identifier {{ param }}",
+      "updated": "A App Function is updated with identifier {{ param }}",
+      "deleted": "A App Function is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App Function {{ id }}?"
+      },
+      "detail": {
+        "title": "App Function"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

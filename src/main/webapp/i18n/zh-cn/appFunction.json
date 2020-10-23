@@ -1,0 +1,23 @@
+{
+  "elsaApp": {
+    "appFunction": {
+      "home": {
+        "title": "App Functions",
+        "createLabel": "创建新 App Function",
+        "createOrEditLabel": "创建或编辑 App Function",
+        "notFound": "No App Functions found"
+      },
+      "created": "App Function {{ param }} 创建成功",
+      "updated": "App Function {{ param }} 更新成功",
+      "deleted": "App Function {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 App Function {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "App Function"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

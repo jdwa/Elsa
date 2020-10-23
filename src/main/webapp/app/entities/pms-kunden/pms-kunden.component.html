@@ -1,0 +1,53 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="elsaApp.pmsKunden.home.title">Pms Kundens</span>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="pmsKundens?.length === 0">
+        <span jhiTranslate="elsaApp.pmsKunden.home.notFound">No pmsKundens found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="pmsKundens && pmsKundens.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="elsaApp.pmsKunden.kdnr">ID(kdnr)</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name1"><span jhiTranslate="elsaApp.pmsKunden.name1">Name1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name2"><span jhiTranslate="elsaApp.pmsKunden.name2">Name2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pmsKunden of pmsKundens ;trackBy: trackId">
+                    <td><a [routerLink]="['/pms-kunden', pmsKunden.id, 'view']">{{ pmsKunden.id }}</a></td>
+                    <td>{{ pmsKunden.name1 }}</td>
+                    <td>{{ pmsKunden.name2 }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/pms-kunden', pmsKunden.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="pmsKundens && pmsKundens.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

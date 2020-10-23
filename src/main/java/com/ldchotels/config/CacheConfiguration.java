@@ -47,6 +47,8 @@ public class CacheConfiguration {
             createCache(cm, com.ldchotels.domain.User.class.getName());
             createCache(cm, com.ldchotels.domain.Authority.class.getName());
             createCache(cm, com.ldchotels.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ldchotels.protel.domain.PmsKunden.class.getName());
+            createCache(cm, com.ldchotels.domain.AppFunction.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

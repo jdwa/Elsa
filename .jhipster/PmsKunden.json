@@ -1,0 +1,26 @@
+{
+  "name": "PmsKunden",
+  "fields": [
+    {
+      "fieldName": "name1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name2",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201023040822",
+  "javadoc": "Protel kunden entity.\\n@author JD",
+  "entityTableName": "pms_kunden",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": true,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

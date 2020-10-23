@@ -1,0 +1,24 @@
+{
+  "elsaApp": {
+    "pmsKunden": {
+      "home": {
+        "title": "Pms Kundens",
+        "createLabel": "创建新 Pms Kunden",
+        "createOrEditLabel": "创建或编辑 Pms Kunden",
+        "notFound": "No Pms Kundens found"
+      },
+      "created": "Pms Kunden {{ param }} 创建成功",
+      "updated": "Pms Kunden {{ param }} 更新成功",
+      "deleted": "Pms Kunden {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Pms Kunden {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Pms Kunden"
+      },
+      "kdnr": "ID(Kdnr)",
+      "name1": "Name 1",
+      "name2": "Name 2"
+    }
+  }
+}
