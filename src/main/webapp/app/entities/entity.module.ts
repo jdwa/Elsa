@@ -12,6 +12,10 @@ import { RouterModule } from '@angular/router';
         path: 'app-function',
         loadChildren: () => import('./app-function/app-function.module').then(m => m.ElsaAppFunctionModule),
       },
+      {
+        path: 'pms-buch',
+        loadChildren: () => import('./pms-buch/pms-buch.module').then(m => m.ElsaPmsBuchModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

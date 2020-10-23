@@ -16,9 +16,9 @@
       "detail": {
         "title": "Pms Kunden"
       },
-      "kdnr": "ID(Kdnr)",
-      "name1": "Name 1",
-      "name2": "Name 2"
+      "kdnr": "ID(kdnr)",
+      "name1": "name1",
+      "name2": "name2"
     }
   }
 }

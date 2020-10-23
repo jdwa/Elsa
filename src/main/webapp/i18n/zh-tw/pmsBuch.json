@@ -1,0 +1,24 @@
+{
+  "elsaApp": {
+    "pmsBuch": {
+      "home": {
+        "title": "Pms Buches",
+        "createLabel": "建立一筆新的 Pms Buch",
+        "createOrEditLabel": "建立或編輯 Pms Buch",
+        "notFound": "No Pms Buches found"
+      },
+      "created": "新的 Pms Buch 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Pms Buch 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Pms Buch 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Pms Buch {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Pms Buch"
+      },
+      "buchnr": "ID(buchnr)",
+      "datumvon": "datumvon",
+      "datumbis": "datumbis"
+    }
+  }
+}

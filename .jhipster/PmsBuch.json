@@ -1,0 +1,26 @@
+{
+  "name": "PmsBuch",
+  "fields": [
+    {
+      "fieldName": "datumvon",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "datumbis",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201023075531",
+  "javadoc": "Protel buch entity.\\n@author JD",
+  "entityTableName": "pms_buch",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": true,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

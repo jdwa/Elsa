@@ -9,6 +9,7 @@
         "main": "Entities",
         "pmsKunden": "Pms Kunden",
         "appFunction": "App Function",
+        "pmsBuch": "Pms Buch",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,4 +1,13 @@
 /**
+ * Application function entity.
+ * @author JD
+ */
+entity AppFunction {
+    name String,
+    description String
+}
+
+/**
  * Protel kunden entity.
  * @author JD
  */
@@ -12,22 +21,26 @@ entity PmsKunden {
 }
 
 /**
- * Application function entity.
+ * Protel buch entity.
  * @author JD
  */
-entity AppFunction {
-    name String,
-    description String
+@readOnly
+entity PmsBuch {
+    /* Map this field to ID
+      buchnr Long,
+    */
+    datumvon LocalDate,
+    datumbis LocalDate
 }
 
 // Set pagination options
-paginate PmsKunden, AppFunction with pagination
+paginate AppFunction, PmsKunden, PmsBuch with pagination
 
 // Use Data Transfert Objects (DTO)
 // dto * with mapstruct
 
 // Set service options to all except few
-service all with serviceImpl except PmsKunden, AppFunction
+service all with serviceImpl except AppFunction, PmsKunden, PmsBuch
 
 // Set an angular suffix
 // angularSuffix * with mySuffix

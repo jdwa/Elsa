@@ -1,0 +1,24 @@
+{
+  "elsaApp": {
+    "pmsBuch": {
+      "home": {
+        "title": "Pms Buches",
+        "createLabel": "Create a new Pms Buch",
+        "createOrEditLabel": "Create or edit a Pms Buch",
+        "notFound": "No Pms Buches found"
+      },
+      "created": "A new Pms Buch is created with identifier {{ param }}",
+      "updated": "A Pms Buch is updated with identifier {{ param }}",
+      "deleted": "A Pms Buch is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pms Buch {{ id }}?"
+      },
+      "detail": {
+        "title": "Pms Buch"
+      },
+      "buchnr": "ID(buchnr)",
+      "datumvon": "Datumvon",
+      "datumbis": "Datumbis"
+    }
+  }
+}
