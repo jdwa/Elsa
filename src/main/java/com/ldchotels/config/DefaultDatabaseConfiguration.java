@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
@@ -27,6 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 )
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
+@ComponentScan
 public class DefaultDatabaseConfiguration {
     private final Logger log = LoggerFactory.getLogger(DefaultDatabaseConfiguration.class);
 
@@ -51,7 +53,14 @@ public class DefaultDatabaseConfiguration {
     @Bean(name = "entityManagerFactory")
     @Primary
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(defaultDataSource()).packages("com.ldchotels.domain").persistenceUnit("default").build();
+        LocalContainerEntityManagerFactoryBean emf = builder
+            .dataSource(defaultDataSource())
+            .packages("com.ldchotels.domain")
+            .persistenceUnit("default")
+            .build();
+        log.info("Entity Manager Factory (PersistenceUnitName): " + emf.getPersistenceUnitName());
+        log.info("Entity Manager Factory (PersistenceUnitInfo): " + emf.getPersistenceUnitInfo());
+        return emf;
     }
 
     @Bean(name = "transactionManager")
